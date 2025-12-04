@@ -1,6 +1,6 @@
 "use client";
 import  { useEffect, useState } from "react";
-import Btn from "../../component/component";
+import Btn from "@/component/component";
 import { LucideMails } from "lucide-react";
 import {  motion } from "framer-motion";
 import Link from "next/link";

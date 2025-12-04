@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Btn from "../../component/component"; // your button component
+import Btn from "@/component/component"; // your button component
 import { Github } from "lucide-react";
 import { useState } from "react";
 import {signIn, signInSocial, signUp } from "@/lib/action/auth-action";
