@@ -28,13 +28,13 @@ export const signUp = async (name: string, email: string, password: string) => {
         password,
       },
     });
-    await prisma.user.update({
-      where: { email },
-      data: {
-        username: name.toLowerCase(),
-        userUrl: `${host}${name.toLowerCase()}`,
-      },
-    });
+    // await prisma.user.update({
+    //   where: { email },
+    //   data: {
+    //     username: name.toLowerCase(),
+    //     userUrl: `${host}${name.toLowerCase()}`,
+    //   },
+    // });
     return result;
   } catch (error) {
     console.log(`signup error: ${error}`);
