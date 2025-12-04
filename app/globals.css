@@ -1,0 +1,36 @@
+@import "tailwindcss";
+.bg {
+  @apply bg-linear-to-br from-[#232d47] to-[#111827] text-white
+;
+}
+
+.btn {
+  @apply flex items-center justify-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-slate-900;
+}
+
+input[type="text"],
+input[type="email"], 
+input[type="password"] {
+  @apply p-3 ring rounded-lg;
+}
+
+textarea {
+  @apply p-3 ring rounded-lg leading-7;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+.parentDiv {
+  @apply  pt-30 md:pt-42  md:px-10 px-5  md:max-w-6xl mx-auto ;
+}
