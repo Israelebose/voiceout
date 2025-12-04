@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { auth, prisma } from "../auth";
 import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
+import { success } from "better-auth";
 const host = process.env.HOST;
 
 export const signIn = async (email: string, password: string) => {
@@ -13,9 +14,15 @@ export const signIn = async (email: string, password: string) => {
         password,
       },
     });
-    return result;
-  } catch (error) {
-    console.log(`login error: ${error}`);
+    return {
+      message: "SignIn Successful",
+      success: true,
+      result
+    };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Signup failed";
+    console.log(`signup error: ${message}`);
+    return { message, success:false};
   }
 };
 
@@ -28,16 +35,16 @@ export const signUp = async (name: string, email: string, password: string) => {
         password,
       },
     });
-    // await prisma.user.update({
-    //   where: { email },
-    //   data: {
-    //     username: name.toLowerCase(),
-    //     userUrl: `${host}${name.toLowerCase()}`,
-    //   },
-    // });
-    return result;
-  } catch (error) {
-    console.log(`signup error: ${error}`);
+    
+    return {
+      message: "SignUp Successful",
+      success: true,
+      result
+    };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Signup failed";
+    console.log(`signup error: ${message}`);
+    return {  message, success:false };
   }
 };
 

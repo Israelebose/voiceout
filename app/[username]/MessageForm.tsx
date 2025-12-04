@@ -33,7 +33,7 @@ export default function MessageForm() {
     }
   };
   return (
-    <div className="w-full  grid grid-cols-1 gap-10 md:gap-30 h-screen  ">
+    <div className="w-full  parentDiv grid grid-cols-1 gap-10 md:gap-30 h-screen  ">
     <div className="flex justify-center w-full">
           <Card
         title="Send A Secret Message"

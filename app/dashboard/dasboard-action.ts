@@ -124,15 +124,23 @@ export const getMessage = async () => {
 export const setUsername = async ()=>{
     const session = await getUserSession()
     const email = session?.user?.email
-    const username = session?.user?.name
+    const username = session?.user?.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
       try {
-
+    const nameCheck = await prisma.user.findUnique({where:{username: username}})
+    const varifiedName = ()=>{
+      if(nameCheck){
+        return `${username!}${Math.floor(Math.random() * 100000) + 200000}`
+      }else{
+        return username!
+      }
+    }
     const host = process.env.HOST;
     const updatedUser = await prisma.user.update({
       where: { email },
       data: {
-        username: username!.toLowerCase(),
-        userUrl: `${host}${username!.toLowerCase()}`,
+        username: varifiedName(),
+        userUrl: `${host}${varifiedName()}`,
       },
     });
 

@@ -42,7 +42,7 @@ export default async function page({
   });
   
   return (
-    <div className=" parentDiv">
+    <div className="">
       {!user ? (
         <div className=" px-5 md:px-10 text-center flex gap-5 flex-col h-screen justify-center items-center">
           <h2 className="md:text-4xl text-xl">User not Found</h2>

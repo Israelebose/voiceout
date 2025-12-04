@@ -189,7 +189,7 @@ export default function DashClient() {
                 value={newUserName!}
                 onChange={(e) => handleUserNameChange(e)}
                 placeholder="New Username"
-                className="w-full text-sm md:text-base p-3 bg-slate-700 border border-slate-600 rounded-lg text-white"
+                className="w-full text-xs md:text-base p-3 bg-slate-700 border border-slate-600 rounded-lg text-white"
               />
 
               <label className="block text-sm font-medium text-slate-400">
@@ -225,7 +225,7 @@ export default function DashClient() {
             </form>
           ) : (
             <>
-              <p className="text-indigo-300 mb-4 font-mono text-sm break-all bg-slate-700 p-3 rounded-xl border border-slate-600 select-all flex justify-between items-center">
+              <p className="text-indigo-300 mb-4 font-mono text-xs md:text-sm break-all bg-slate-700 p-3 rounded-xl border border-slate-600 select-all flex justify-between items-center">
                 {user?.userUrl}
                 <motion.button
                   onClick={() => setEditing()}
