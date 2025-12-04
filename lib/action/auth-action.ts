@@ -64,7 +64,7 @@ export const signInSocial = async (provider: "github") => {
   const { url } = await auth.api.signInSocial({
     body: {
       provider,
-      callbackURL: "/dashboard",
+      callbackURL: "/api/auth/callback/github",
     },
   });
 

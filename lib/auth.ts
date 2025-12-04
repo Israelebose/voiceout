@@ -20,11 +20,15 @@ export const auth = betterAuth({
   socialProviders: {
     github: {
       enabled: true,
-      clientId:process.env.GITHUB_ID as string ,
-            clientSecret:process.env.GITHUB_SECRET as string,
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string,
     },
   },
   session: {
+    async onSignIn() {
+      return "/dashboard";
+    },
+
     expiresIn: 3600 * 1000, // Set the session to expire in 1 hour (in milliseconds)
   },
   plugins: [nextCookies()],
