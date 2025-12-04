@@ -5,7 +5,13 @@ import { LucideMails } from "lucide-react";
 import {  motion } from "framer-motion";
 import Link from "next/link";
 import { staggerAni } from "@/component/animation";
-import { Post } from "@prisma/client";
+type Post = {
+  id: string;
+    reciever: string;
+    message: string;
+    authorId: string | null;
+    createdAt: Date;
+}
 import { getMessage } from "./message-action";
 import { useToast } from "@/context/ToastContext";
 const timeAgo = (date: Date) => {

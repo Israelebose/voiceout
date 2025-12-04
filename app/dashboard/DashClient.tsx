@@ -18,11 +18,17 @@ import {
   getMessage,
   setUsername,
 } from "./dasboard-action";
-import { Post } from "@prisma/client";
+
+type Post = {
+  id: string;
+    reciever: string;
+    message: string;
+    authorId: string | null;
+    createdAt: Date;
+}
 import Link from "next/link";
 import { staggerAni } from "@/component/animation";
 import { getUserSession } from "@/lib/action/auth-action";
-import { prisma } from "@/lib/auth";
 
 export default function DashClient() {
   const user = HandleUser()?.user;
