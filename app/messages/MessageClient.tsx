@@ -5,7 +5,7 @@ import { LucideMails } from "lucide-react";
 import {  motion } from "framer-motion";
 import Link from "next/link";
 import { staggerAni } from "@/component/animation";
-import { Post } from "@/lib/generated/prisma/client";
+import { Post } from "@prisma/client";
 import { getMessage } from "./message-action";
 import { useToast } from "@/context/ToastContext";
 const timeAgo = (date: Date) => {

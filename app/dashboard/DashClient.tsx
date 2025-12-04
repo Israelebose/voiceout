@@ -18,7 +18,7 @@ import {
   getMessage,
   setUsername,
 } from "./dasboard-action";
-import { Post } from "@/lib/generated/prisma/client";
+import { Post } from "@prisma/client";
 import Link from "next/link";
 import { staggerAni } from "@/component/animation";
 import { getUserSession } from "@/lib/action/auth-action";
