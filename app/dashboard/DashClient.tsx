@@ -19,13 +19,14 @@ import {
   setUsername,
 } from "./dasboard-action";
 
-type Post = {
-  id: string;
-    reciever: string;
-    message: string;
-    authorId: string | null;
-    createdAt: Date;
-}
+// type Post = {
+//   id: string;
+//     reciever: string;
+//     message: string;
+//     authorId: string | null;
+//     createdAt: Date;
+// }
+import { Post } from "@prisma/client";
 import Link from "next/link";
 import { staggerAni } from "@/component/animation";
 import { getUserSession } from "@/lib/action/auth-action";
